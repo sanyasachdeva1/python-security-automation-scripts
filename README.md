@@ -24,6 +24,25 @@ The goal is to reduce manual investigation time by parsing logs, detecting suspi
 - Security automation
 - Incident response fundamentals
 
+## Project Status
+
+This lab currently includes working Python scripts for:
+
+- SSH failed-login detection
+- IOC matching
+- Nmap XML parsing
+- IAM policy risk review
+
+Each script includes sample input data and expected output for reproducibility.
+
+## Security Concepts Demonstrated
+
+- Brute-force detection
+- Indicator of compromise matching
+- Attack surface discovery
+- Least-privilege IAM review
+- First-level SOC triage automation
+
 ## Repository Structure
 
 ```text
