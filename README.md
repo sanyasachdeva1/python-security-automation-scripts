@@ -106,3 +106,14 @@ Run IAM policy checker:
 ```bash
 python3 scripts/iam_policy_checker.py sample-data/iam_policy.json
 ```
+
+## Resume Relevance
+
+This project demonstrates hands-on experience in:
+
+- Security automation
+- Incident response triage
+- Log analysis
+- Cloud IAM risk detection
+- Attack surface review
+- Python scripting for SOC workflows
