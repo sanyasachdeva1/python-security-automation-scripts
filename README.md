@@ -5,6 +5,7 @@
 This project contains Python scripts that automate common cybersecurity workflows used by SOC analysts, cloud security engineers, and incident response teams.
 
 The goal is to reduce manual investigation time by parsing logs, detecting suspicious behavior, checking indicators of compromise, reviewing IAM policies, and generating simple security findings.
+This lab demonstrates first-level SOC and cloud security triage automation using Python, sample security logs, Nmap scan output, IOC matching, and IAM policy review.
 
 ## Project Status
 
