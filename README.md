@@ -117,3 +117,14 @@ This project demonstrates hands-on experience in:
 - Cloud IAM risk detection
 - Attack surface review
 - Python scripting for SOC workflows
+
+## Automated Checks
+
+This repository uses GitHub Actions to automatically check Python syntax and run basic tests whenever code is pushed to the main branch.
+
+The workflow validates:
+
+- Required scripts exist
+- Required sample data files exist
+- Python files compile successfully
+- Basic pytest checks pass
