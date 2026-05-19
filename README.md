@@ -6,6 +6,25 @@ This project contains Python scripts that automate common cybersecurity workflow
 
 The goal is to reduce manual investigation time by parsing logs, detecting suspicious behavior, checking indicators of compromise, reviewing IAM policies, and generating simple security findings.
 
+## Project Status
+
+This lab includes working Python scripts for:
+
+- SSH failed-login detection
+- IOC matching
+- Nmap XML parsing
+- IAM policy risk review
+
+Each script includes sample input data and reproducible command-line output.
+
+## Security Concepts Demonstrated
+
+- Brute-force detection
+- Indicator of compromise matching
+- Attack surface discovery
+- Least-privilege IAM review
+- First-level SOC triage automation
+
 ## Use Cases
 
 - Detect repeated failed login attempts from authentication logs
@@ -24,17 +43,6 @@ The goal is to reduce manual investigation time by parsing logs, detecting suspi
 - Security automation
 - Incident response fundamentals
 
-## Project Status
-
-This lab currently includes working Python scripts for:
-
-- SSH failed-login detection
-- IOC matching
-- Nmap XML parsing
-- IAM policy risk review
-
-Each script includes sample input data and expected output for reproducibility.
-
 ## Security Concepts Demonstrated
 
 - Brute-force detection
@@ -51,3 +59,37 @@ sample-data/   Sample logs, IOC files, Nmap XML, IAM policies
 reports/       Example generated reports
 screenshots/   Execution screenshots
 docs/          Step-by-step lab documentation
+
+## Screenshots
+
+### Failed Login Detection
+
+![Failed Login Detection](screenshots/log_anomaly_detector_output.png)
+
+### IOC Checker
+
+![IOC Checker](screenshots/ioc_checker_output.png)
+
+### Nmap Parser
+
+![Nmap Parser](screenshots/nmap_parser_output.png)
+
+### IAM Policy Checker
+
+![IAM Policy Checker](screenshots/iam_policy_checker_output.png)
+
+
+## How to Run
+
+Run failed login detector:
+python3 scripts/log_anomaly_detector.py sample-data/auth.log
+
+Run IOC checker:
+python3 scripts/ioc_checker.py sample-data/iocs.txt sample-data/auth.log
+
+Run Nmap parser:
+python3 scripts/nmap_scan_parser.py sample-data/nmap_scan.xml
+
+Run IAM policy checker:
+python3 scripts/iam_policy_checker.py sample-data/iam_policy.json
+
