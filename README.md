@@ -86,14 +86,22 @@ Run failed login detector:
 
 ```bash
 python3 scripts/log_anomaly_detector.py sample-data/auth.log
+```
 
 Run IOC checker:
+
+```bash
 python3 scripts/ioc_checker.py sample-data/iocs.txt sample-data/auth.log
+```
 
 Run Nmap parser:
+
+```bash
 python3 scripts/nmap_scan_parser.py sample-data/nmap_scan.xml
+```
 
 Run IAM policy checker:
+
+```bash
 python3 scripts/iam_policy_checker.py sample-data/iam_policy.json
-
-
+```
