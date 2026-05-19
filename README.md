@@ -43,22 +43,24 @@ Each script includes sample input data and reproducible command-line output.
 - Security automation
 - Incident response fundamentals
 
-## Security Concepts Demonstrated
-
-- Brute-force detection
-- Indicator of compromise matching
-- Attack surface discovery
-- Least-privilege IAM review
-- First-level SOC triage automation
-
 ## Repository Structure
 
-```text
-scripts/       Python automation scripts
-sample-data/   Sample logs, IOC files, Nmap XML, IAM policies
-reports/       Example generated reports
-screenshots/   Execution screenshots
-docs/          Step-by-step lab documentation
+| Folder | Purpose |
+|---|---|
+| `scripts/` | Python automation scripts |
+| `sample-data/` | Sample logs, IOC files, Nmap XML, IAM policies |
+| `reports/` | Example generated reports |
+| `screenshots/` | Execution screenshots |
+| `docs/` | Step-by-step lab documentation |
+
+## Scripts Included
+
+| Script | Purpose |
+|---|---|
+| `log_anomaly_detector.py` | Detects repeated failed login attempts |
+| `ioc_checker.py` | Checks suspicious indicators against a known IOC list |
+| `nmap_scan_parser.py` | Parses Nmap XML and extracts open ports/services |
+| `iam_policy_checker.py` | Flags risky IAM permissions such as wildcard access |
 
 ## Screenshots
 
@@ -78,10 +80,11 @@ docs/          Step-by-step lab documentation
 
 ![IAM Policy Checker](screenshots/iam_policy_checker_output.png)
 
-
 ## How to Run
 
 Run failed login detector:
+
+```bash
 python3 scripts/log_anomaly_detector.py sample-data/auth.log
 
 Run IOC checker:
@@ -92,4 +95,5 @@ python3 scripts/nmap_scan_parser.py sample-data/nmap_scan.xml
 
 Run IAM policy checker:
 python3 scripts/iam_policy_checker.py sample-data/iam_policy.json
+
 
