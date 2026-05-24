@@ -4,10 +4,6 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 ![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
 
-**Live Dashboard:** [Open SOC Dashboard](https://sanyasachdeva1.github.io/python-security-automation-scripts/reports/soc_dashboard.html)  
-**License:** MIT  
-**Python:** 3.8+
-
 ## Objective
 
 This project contains Python scripts that automate common cybersecurity workflows used by SOC analysts, cloud security engineers, and incident response teams.
@@ -159,6 +155,26 @@ flowchart LR
 | `soar_playbooks.py` | Generates response playbook recommendations |
 | `input_collector.py` | Collects externalized input files or URL feeds into normalized data files |
 
+## SOC-Level Features
+
+- Shared `Finding` model with severity, evidence, recommendations, MITRE ATT&CK mapping, and source tracking
+- Prioritized triage output sorted by severity
+- SSH brute-force detection with targeted-user evidence and successful-login correlation
+- IOC matching with indicator type classification and line-level evidence
+- Nmap service risk rating for exposed management, database, and web services
+- IAM policy review for wildcard access, resource overexposure, `NotAction` risk, and privilege escalation patterns
+- CloudTrail detection for root login failures, access-key creation, policy attachment, and bucket policy changes
+- Windows detection for brute-force patterns, encoded PowerShell, account creation, and privileged group membership changes
+- Incident timeline generation across Linux auth logs, AWS CloudTrail, and Windows events
+- Case-management report with severity, key findings, timeline, and response checklist
+- Simple Sigma and YARA-style rule support for detection engineering examples
+- HTML dashboard with severity metrics and analyst recommendations
+- Offline threat intelligence feed for malicious/suspicious IP and domain context
+- Risk scoring that combines severity, cloud/endpoint context, successful access, MITRE relevance, and threat-intel confidence
+- SOAR-style playbook recommendations for SSH brute force, AWS privilege escalation, Windows compromise, IOC matches, and exposed services
+- Optional input collector for externalized file exports and URL-based feeds
+- Combined report generation for incident notes, GitHub evidence, and portfolio review
+
 ## How to Run
 
 ### Quick Demo
@@ -170,7 +186,6 @@ python3 scripts/soc_triage.py
 ```
 
 Generate the main portfolio artifacts:
-
 ```bash
 python3 scripts/soc_triage.py --format markdown --output reports/soc_triage_report.md
 python3 scripts/incident_timeline.py --output reports/incident_timeline.md
@@ -180,7 +195,6 @@ python3 scripts/soar_playbooks.py --output reports/soar_playbooks.md
 ```
 
 Expected sample outcome:
-
 - 20 total findings from the provided sample data
 - Critical findings for privileged Windows group modification, suspicious AWS IAM policy attachment, and wildcard IAM access
 - High-risk detections for encoded PowerShell, CloudTrail access-key creation, SSH brute force, IOC matches, and exposed SSH
@@ -317,26 +331,6 @@ python3 scripts/nmap_scan_parser.py sample-data/nmap_scan.xml --format json
 python3 scripts/iam_policy_checker.py sample-data/iam_policy.json --format markdown
 ```
 
-## SOC-Level Features
-
-- Shared `Finding` model with severity, evidence, recommendations, MITRE ATT&CK mapping, and source tracking
-- Prioritized triage output sorted by severity
-- SSH brute-force detection with targeted-user evidence and successful-login correlation
-- IOC matching with indicator type classification and line-level evidence
-- Nmap service risk rating for exposed management, database, and web services
-- IAM policy review for wildcard access, resource overexposure, `NotAction` risk, and privilege escalation patterns
-- CloudTrail detection for root login failures, access-key creation, policy attachment, and bucket policy changes
-- Windows detection for brute-force patterns, encoded PowerShell, account creation, and privileged group membership changes
-- Incident timeline generation across Linux auth logs, AWS CloudTrail, and Windows events
-- Case-management report with severity, key findings, timeline, and response checklist
-- Simple Sigma and YARA-style rule support for detection engineering examples
-- HTML dashboard with severity metrics and analyst recommendations
-- Offline threat intelligence feed for malicious/suspicious IP and domain context
-- Risk scoring that combines severity, cloud/endpoint context, successful access, MITRE relevance, and threat-intel confidence
-- SOAR-style playbook recommendations for SSH brute force, AWS privilege escalation, Windows compromise, IOC matches, and exposed services
-- Optional input collector for externalized file exports and URL-based feeds
-- Combined report generation for incident notes, GitHub evidence, and portfolio review
-
 ## Report Outputs
 
 The generated reports are committed as examples so reviewers can inspect the output without running the scripts first.
@@ -360,9 +354,7 @@ Live integrations can be added later as optional collectors or enrichers without
 See `docs/external_data_sources.md` and `config/external_sources.example.json` for the optional collector workflow.
 
 ## Production Extension Path
-
 In a production SOC, this project could be extended by adding collectors for:
-
 - AWS CloudTrail from S3, CloudWatch Logs, or the AWS API
 - SIEM exports from Splunk, Sentinel, Elastic, or QRadar
 - EDR exports from Defender, CrowdStrike, SentinelOne, or osquery
@@ -370,32 +362,6 @@ In a production SOC, this project could be extended by adding collectors for:
 - Ticketing and case systems such as Jira, ServiceNow, TheHive, or GitHub Issues
 
 The recommended pattern is to keep analyzers file-based and deterministic, while collectors handle external APIs and normalize data into `collected-data/`.
-
-## Limitations
-
-- Current CloudTrail, Windows, threat-intel, Sigma, and YARA inputs are local demo files.
-- The Sigma and YARA support is intentionally lightweight for portfolio demonstration, not a full replacement for mature engines.
-- No real external API calls are made by default.
-- Findings are sample detections intended for education and triage automation practice.
-
-## Interview Walkthrough
-
-I built this as an end-to-end SOC automation workflow. The pipeline starts with normalized telemetry, converts detections into a shared `Finding` model, enriches indicators with local threat intelligence, applies a risk score, and generates reports a SOC analyst could use during triage.
-
-The most important design choice is separating collection from analysis. The analyzers work with local files for safe reproducibility, while `input_collector.py` provides a future path for external logs, feeds, SIEM exports, or cloud APIs.
-
-This demonstrates practical SOC engineering skills: log parsing, cloud security review, endpoint event triage, detection engineering, incident timeline creation, evidence handling, prioritization, and response playbook generation.
-
-## Resume Relevance
-
-This project demonstrates hands-on experience in:
-
-- Security automation
-- Incident response triage
-- Log analysis
-- Cloud IAM risk detection
-- Attack surface review
-- Python scripting for SOC workflows
 
 ## Automated Checks
 
@@ -408,3 +374,10 @@ The workflow validates:
 - Python files compile successfully
 - Analyzer behavior and finding structure
 - Basic pytest checks pass
+
+---
+
+## Disclaimer
+This project is designed for educational and defensive security purposes only. The simulation is non-destructive and does not transmit real malicious wireless traffic.
+Only run wireless security testing on networks and devices you own or are authorized to test.
+
