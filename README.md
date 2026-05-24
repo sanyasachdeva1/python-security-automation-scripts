@@ -146,24 +146,6 @@ flowchart LR
 | `soar_playbooks.py` | Generates response playbook recommendations |
 | `input_collector.py` | Collects externalized input files or URL feeds into normalized data files |
 
-## Screenshots
-
-### Failed Login Detection
-
-![Failed Login Detection](screenshots/log_anomaly_detector_output.png)
-
-### IOC Checker
-
-![IOC Checker](screenshots/ioc_checker_output.png)
-
-### Nmap Parser
-
-![Nmap Parser](screenshots/nmap_parser_output.png)
-
-### IAM Policy Checker
-
-![IAM Policy Checker](screenshots/iam_policy_checker_output.png)
-
 ## How to Run
 
 ### Quick Demo
