@@ -1,5 +1,5 @@
 ![Python Security Script Check](https://github.com/sanyasachdeva1/python-security-automation-scripts/actions/workflows/python-check.yml/badge.svg)
-# Python Security Automation Scripts
+# SOC & Incident Response Automation Toolkit
 
 ## Objective
 
