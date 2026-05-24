@@ -14,6 +14,12 @@ This project simulates a small SOC automation pipeline. It collects normalized s
 
 The project is intentionally offline-first so it can be cloned, tested, and demonstrated without cloud credentials, paid APIs, or sensitive production logs. At the same time, it includes an optional collector layer so future AWS, SIEM, EDR, threat-intel, or URL-based feeds can be normalized into the same workflow.
 
+## Live Dashboard
+
+View the published SOC dashboard:
+
+[Open SOC Dashboard](https://sanyasachdeva1.github.io/python-security-automation-scripts/reports/soc_dashboard.html)
+
 ## Project Status
 
 This lab includes working Python scripts for:
