@@ -1,5 +1,12 @@
-![Python Security Script Check](https://github.com/sanyasachdeva1/python-security-automation-scripts/actions/workflows/python-check.yml/badge.svg)
 # SOC & Incident Response Automation Toolkit
+
+![Python Security Script Check](https://github.com/sanyasachdeva1/python-security-automation-scripts/actions/workflows/python-check.yml/badge.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
+
+**Live Dashboard:** [Open SOC Dashboard](https://sanyasachdeva1.github.io/python-security-automation-scripts/reports/soc_dashboard.html)  
+**License:** MIT  
+**Python:** 3.8+
 
 ## Objective
 
