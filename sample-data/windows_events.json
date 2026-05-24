@@ -1,0 +1,51 @@
+[
+  {
+    "TimeCreated": "2026-05-19T10:06:03Z",
+    "EventID": 4625,
+    "Computer": "WIN-DC01",
+    "TargetUserName": "administrator",
+    "IpAddress": "45.33.21.10",
+    "LogonType": 10,
+    "Status": "0xC000006A"
+  },
+  {
+    "TimeCreated": "2026-05-19T10:06:11Z",
+    "EventID": 4625,
+    "Computer": "WIN-DC01",
+    "TargetUserName": "administrator",
+    "IpAddress": "45.33.21.10",
+    "LogonType": 10,
+    "Status": "0xC000006A"
+  },
+  {
+    "TimeCreated": "2026-05-19T10:09:44Z",
+    "EventID": 4624,
+    "Computer": "WIN-DC01",
+    "TargetUserName": "administrator",
+    "IpAddress": "45.33.21.10",
+    "LogonType": 10
+  },
+  {
+    "TimeCreated": "2026-05-19T10:12:37Z",
+    "EventID": 4688,
+    "Computer": "WIN-WS01",
+    "TargetUserName": "sanya",
+    "NewProcessName": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "CommandLine": "powershell.exe -NoP -EncodedCommand SQBFAFgA"
+  },
+  {
+    "TimeCreated": "2026-05-19T10:14:52Z",
+    "EventID": 4720,
+    "Computer": "WIN-DC01",
+    "TargetUserName": "backup-admin",
+    "SubjectUserName": "administrator"
+  },
+  {
+    "TimeCreated": "2026-05-19T10:15:18Z",
+    "EventID": 4732,
+    "Computer": "WIN-DC01",
+    "TargetUserName": "backup-admin",
+    "GroupName": "Domain Admins",
+    "SubjectUserName": "administrator"
+  }
+]

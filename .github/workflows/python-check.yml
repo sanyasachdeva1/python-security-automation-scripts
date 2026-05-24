@@ -24,7 +24,7 @@ jobs:
       - name: Install test dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pytest
+          pip install -r requirements.txt
 
       - name: Check Python syntax
         run: |
@@ -32,6 +32,18 @@ jobs:
           python -m py_compile scripts/ioc_checker.py
           python -m py_compile scripts/nmap_scan_parser.py
           python -m py_compile scripts/iam_policy_checker.py
+          python -m py_compile scripts/soc_common.py
+          python -m py_compile scripts/soc_triage.py
+          python -m py_compile scripts/cloudtrail_analyzer.py
+          python -m py_compile scripts/windows_event_analyzer.py
+          python -m py_compile scripts/incident_timeline.py
+          python -m py_compile scripts/rule_scanner.py
+          python -m py_compile scripts/html_dashboard.py
+          python -m py_compile scripts/case_manager.py
+          python -m py_compile scripts/threat_intel_enricher.py
+          python -m py_compile scripts/risk_scoring.py
+          python -m py_compile scripts/soar_playbooks.py
+          python -m py_compile scripts/input_collector.py
 
       - name: Run tests
         run: |

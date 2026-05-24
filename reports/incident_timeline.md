@@ -1,0 +1,21 @@
+# Incident Timeline
+
+- **2026-05-19T10:01:12Z** `ssh_failed_login` actor=unknown asset=server - sshd[101]: Failed password for admin from 45.33.21.10 port 55231 ssh2
+- **2026-05-19T10:01:18Z** `ssh_failed_login` actor=unknown asset=server - sshd[102]: Failed password for admin from 45.33.21.10 port 55232 ssh2
+- **2026-05-19T10:01:25Z** `ssh_failed_login` actor=unknown asset=server - sshd[103]: Failed password for admin from 45.33.21.10 port 55233 ssh2
+- **2026-05-19T10:01:34Z** `ssh_failed_login` actor=unknown asset=server - sshd[104]: Failed password for admin from 45.33.21.10 port 55234 ssh2
+- **2026-05-19T10:01:41Z** `ssh_failed_login` actor=unknown asset=server - sshd[105]: Failed password for admin from 45.33.21.10 port 55235 ssh2
+- **2026-05-19T10:02:02Z** `ssh_login` actor=unknown asset=server - sshd[106]: Accepted password for sanya from 192.168.1.15 port 60122 ssh2
+- **2026-05-19T10:05:10Z** `ssh_failed_login` actor=unknown asset=server - sshd[107]: Failed password for root from 103.25.44.8 port 33121 ssh2
+- **2026-05-19T10:05:15Z** `ssh_failed_login` actor=unknown asset=server - sshd[108]: Failed password for root from 103.25.44.8 port 33122 ssh2
+- **2026-05-19T10:05:20Z** `ssh_failed_login` actor=unknown asset=server - sshd[109]: Failed password for root from 103.25.44.8 port 33123 ssh2
+- **2026-05-19T10:06:03Z** `windows_4625` actor=administrator asset=WIN-DC01 - administrator
+- **2026-05-19T10:06:11Z** `windows_4625` actor=administrator asset=WIN-DC01 - administrator
+- **2026-05-19T10:08:14Z** `aws_ConsoleLogin` actor=arn:aws:iam::123456789012:root asset=us-east-1 - ConsoleLogin from 45.33.21.10
+- **2026-05-19T10:09:44Z** `windows_4624` actor=administrator asset=WIN-DC01 - administrator
+- **2026-05-19T10:11:42Z** `aws_CreateAccessKey` actor=analyst-temp asset=us-east-1 - CreateAccessKey from 103.25.44.8
+- **2026-05-19T10:12:37Z** `windows_4688` actor=sanya asset=WIN-WS01 - powershell.exe -NoP -EncodedCommand SQBFAFgA
+- **2026-05-19T10:13:09Z** `aws_AttachUserPolicy` actor=analyst-temp asset=us-east-1 - AttachUserPolicy from 103.25.44.8
+- **2026-05-19T10:14:52Z** `windows_4720` actor=administrator asset=WIN-DC01 - backup-admin
+- **2026-05-19T10:15:18Z** `windows_4732` actor=administrator asset=WIN-DC01 - Domain Admins
+- **2026-05-19T10:18:22Z** `aws_PutBucketPolicy` actor=arn:aws:sts::123456789012:assumed-role/AppRole/session asset=us-east-1 - PutBucketPolicy from 192.168.1.15

@@ -1,0 +1,41 @@
+{
+  "output_dir": "collected-data",
+  "sources": [
+    {
+      "name": "exported_linux_auth_log",
+      "type": "file",
+      "path": "/path/to/auth.log",
+      "target": "auth.log"
+    },
+    {
+      "name": "exported_cloudtrail_json",
+      "type": "file",
+      "path": "/path/to/cloudtrail_events.json",
+      "target": "cloudtrail_events.json"
+    },
+    {
+      "name": "exported_windows_events",
+      "type": "file",
+      "path": "/path/to/windows_events.json",
+      "target": "windows_events.json"
+    },
+    {
+      "name": "external_ioc_feed",
+      "type": "url",
+      "url": "https://example.com/iocs.txt",
+      "target": "iocs.txt",
+      "headers_env": {
+        "Authorization": "IOC_FEED_AUTH_HEADER"
+      }
+    },
+    {
+      "name": "external_threat_intel_feed",
+      "type": "url",
+      "url": "https://example.com/threat_intel.json",
+      "target": "threat_intel.json",
+      "headers_env": {
+        "X-API-Key": "THREAT_INTEL_API_KEY"
+      }
+    }
+  ]
+}

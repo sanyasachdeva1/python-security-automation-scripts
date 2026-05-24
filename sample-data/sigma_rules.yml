@@ -1,0 +1,23 @@
+title: Suspicious Encoded PowerShell
+id: demo-sigma-encoded-powershell
+description: Detects PowerShell launched with encoded command arguments.
+severity: high
+logsource: windows
+detection:
+  EventID: 4688
+  CommandLine|contains:
+    - EncodedCommand
+    - -enc
+tags:
+  - attack.t1059.001
+---
+title: Domain Admin Group Modification
+id: demo-sigma-domain-admin-change
+description: Detects users added to Domain Admins.
+severity: critical
+logsource: windows
+detection:
+  EventID: 4732
+  GroupName|contains: Domain Admins
+tags:
+  - attack.t1098

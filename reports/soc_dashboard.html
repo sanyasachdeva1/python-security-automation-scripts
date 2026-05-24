@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOC Dashboard Report</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; color: #111827; background: #f8fafc; }
+    header { padding: 28px 36px; background: #111827; color: #f9fafb; }
+    h1 { margin: 0; font-size: 28px; }
+    main { padding: 28px 36px; }
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 24px; }
+    .metric { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; }
+    .metric span { display: block; font-size: 12px; color: #64748b; }
+    .metric strong { font-size: 30px; }
+    table { width: 100%; border-collapse: collapse; background: white; border: 1px solid #e5e7eb; }
+    th, td { text-align: left; padding: 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+    th { font-size: 12px; color: #475569; background: #f1f5f9; }
+    .badge { color: white; border-radius: 999px; padding: 4px 8px; font-size: 12px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header><h1>SOC & Incident Response Dashboard</h1></header>
+  <main>
+    <section class="metrics"><section class='metric'><span>CRITICAL</span><strong>4</strong></section>
+<section class='metric'><span>HIGH</span><strong>13</strong></section>
+<section class='metric'><span>MEDIUM</span><strong>3</strong></section>
+<section class='metric'><span>LOW</span><strong>0</strong></section>
+<section class='metric'><span>INFO</span><strong>0</strong></section></section>
+    <table>
+      <thead><tr><th>Severity</th><th>Finding</th><th>Risk</th><th>Source</th><th>MITRE ATT&CK</th><th>Recommendation</th></tr></thead>
+      <tbody><tr><td><span class='badge' style='background:#7f1d1d'>CRITICAL</span></td><td>User added to privileged group: Domain Admins</td><td>100/100</td><td>sample-data/windows_events.json</td><td>T1098 Account Manipulation</td><td>Validate change ticket, remove unauthorized membership, and reset affected credentials.</td></tr>
+<tr><td><span class='badge' style='background:#7f1d1d'>CRITICAL</span></td><td>Sigma rule match: Domain Admin Group Modification</td><td>100/100</td><td>sample-data/windows_events.json</td><td>attack.t1098</td><td>Triage the matching event and collect surrounding host telemetry.</td></tr>
+<tr><td><span class='badge' style='background:#7f1d1d'>CRITICAL</span></td><td>High-risk CloudTrail event: AttachUserPolicy</td><td>100/100</td><td>sample-data/cloudtrail_events.json</td><td>T1098 Account Manipulation, T1078 Valid Accounts</td><td>Validate change ownership, review adjacent events for privilege escalation, and revoke unauthorized access immediately.</td></tr>
+<tr><td><span class='badge' style='background:#b91c1c'>HIGH</span></td><td>YARA rule match: Suspicious_AdminAccess_Policy</td><td>88/100</td><td>sample-data/cloudtrail_events.json</td><td>T1098</td><td>Inspect matching content and determine whether containment or eradication is required.</td></tr>
+<tr><td><span class='badge' style='background:#b91c1c'>HIGH</span></td><td>Risky IAM action allowed: iam:PassRole</td><td>86/100</td><td>sample-data/iam_policy.json</td><td>T1098 Account Manipulation, T1548 Abuse Elevation Control Mechanism</td><td>Replace broad permissions with least-privilege actions, scope resources to specific ARNs, and require conditions such as MFA or source network controls.</td></tr>
+<tr><td><span class='badge' style='background:#b91c1c'>HIGH</span></td><td>Potential IAM privilege escalation path</td><td>86/100</td><td>sample-data/iam_policy.json</td><td>T1548 Abuse Elevation Control Mechanism</td><td>Require approval conditions and tightly scope role, policy, user, and function targets.</td></tr>
+<tr><td><span class='badge' style='background:#b91c1c'>HIGH</span></td><td>Failed AWS root console login</td><td>86/100</td><td>sample-data/cloudtrail_events.json</td><td>T1078 Valid Accounts</td><td>Confirm the source, enforce MFA, and monitor for additional root login attempts.</td></tr>
+<tr><td><span class='badge' style='background:#b91c1c'>HIGH</span></td><td>High-risk CloudTrail event: CreateAccessKey</td><td>84/100</td><td>sample-data/cloudtrail_events.json</td><td>T1098 Account Manipulation, T1078 Valid Accounts</td><td>Validate change ownership, review adjacent events for privilege escalation, and revoke unauthorized access immediately.</td></tr>
+<tr><td><span class='badge' style='background:#7f1d1d'>CRITICAL</span></td><td>Risky IAM action allowed: *</td><td>80/100</td><td>sample-data/iam_policy.json</td><td>T1098 Account Manipulation, T1548 Abuse Elevation Control Mechanism</td><td>Replace broad permissions with least-privilege actions, scope resources to specific ARNs, and require conditions such as MFA or source network controls.</td></tr>
+<tr><td><span class='badge' style='background:#b91c1c'>HIGH</span></td><td>SSH brute-force pattern from 103.25.44.8</td><td>78/100</td><td>sample-data/auth.log</td><td>T1110 Brute Force, T1021.004 SSH</td><td>Search for successful authentications from this source, block or rate-limit the IP, enforce MFA, and disable password-based SSH where possible.</td></tr>
+<tr><td><span class='badge' style='background:#b91c1c'>HIGH</span></td><td>Suspicious encoded PowerShell execution</td><td>76/100</td><td>sample-data/windows_events.json</td><td>T1059.001 PowerShell</td><td>Collect process tree, script block logs, and endpoint telemetry for this host.</td></tr>
+<tr><td><span class='badge' style='background:#b91c1c'>HIGH</span></td><td>Sigma rule match: Suspicious Encoded PowerShell</td><td>76/100</td><td>sample-data/windows_events.json</td><td>attack.t1059.001</td><td>Triage the matching event and collect surrounding host telemetry.</td></tr>
+<tr><td><span class='badge' style='background:#b91c1c'>HIGH</span></td><td>SSH brute-force pattern from 45.33.21.10</td><td>74/100</td><td>sample-data/auth.log</td><td>T1110 Brute Force, T1021.004 SSH</td><td>Search for successful authentications from this source, block or rate-limit the IP, enforce MFA, and disable password-based SSH where possible.</td></tr>
+<tr><td><span class='badge' style='background:#b91c1c'>HIGH</span></td><td>Known IOC observed: 45.33.21.10</td><td>74/100</td><td>sample-data/auth.log</td><td>T1595 Active Scanning, T1071 Application Layer Protocol</td><td>Pivot across SIEM, firewall, EDR, DNS, and authentication logs for this indicator, then contain affected assets if additional activity is confirmed.</td></tr>
+<tr><td><span class='badge' style='background:#b91c1c'>HIGH</span></td><td>High-risk CloudTrail event: PutBucketPolicy</td><td>66/100</td><td>sample-data/cloudtrail_events.json</td><td>T1098 Account Manipulation, T1078 Valid Accounts</td><td>Validate change ownership, review adjacent events for privilege escalation, and revoke unauthorized access immediately.</td></tr>
+<tr><td><span class='badge' style='background:#b91c1c'>HIGH</span></td><td>Open ssh service on 192.168.1.10:22</td><td>62/100</td><td>sample-data/nmap_scan.xml</td><td>T1046 Network Service Discovery</td><td>Validate business need, restrict exposure with firewall or security group rules, and confirm patch level for the exposed service.</td></tr>
+<tr><td><span class='badge' style='background:#b91c1c'>HIGH</span></td><td>IAM statement applies to all resources</td><td>62/100</td><td>sample-data/iam_policy.json</td><td>T1098 Account Manipulation</td><td>Scope Resource to specific ARNs whenever the AWS service supports it.</td></tr>
+<tr><td><span class='badge' style='background:#b45309'>MEDIUM</span></td><td>Windows account created: backup-admin</td><td>54/100</td><td>sample-data/windows_events.json</td><td>T1136 Create Account</td><td>Confirm the account creation was authorized and review subsequent group changes.</td></tr>
+<tr><td><span class='badge' style='background:#b45309'>MEDIUM</span></td><td>IAM statement applies to all resources</td><td>54/100</td><td>sample-data/iam_policy.json</td><td>T1098 Account Manipulation</td><td>Scope Resource to specific ARNs whenever the AWS service supports it.</td></tr>
+<tr><td><span class='badge' style='background:#b45309'>MEDIUM</span></td><td>Open http service on 192.168.1.10:80</td><td>42/100</td><td>sample-data/nmap_scan.xml</td><td>T1046 Network Service Discovery</td><td>Validate business need, restrict exposure with firewall or security group rules, and confirm patch level for the exposed service.</td></tr></tbody>
+    </table>
+  </main>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "indicators": {
+    "45.33.21.10": {
+      "type": "ip",
+      "reputation": "malicious",
+      "confidence": 92,
+      "source": "Local Threat Intel Feed",
+      "tags": ["bruteforce", "scanner", "ssh"],
+      "first_seen": "2026-05-01",
+      "last_seen": "2026-05-19",
+      "notes": "Observed in repeated SSH and Windows logon attempts."
+    },
+    "103.25.44.8": {
+      "type": "ip",
+      "reputation": "suspicious",
+      "confidence": 78,
+      "source": "Local Threat Intel Feed",
+      "tags": ["credential-access", "cloud-abuse"],
+      "first_seen": "2026-05-12",
+      "last_seen": "2026-05-19",
+      "notes": "Associated with failed logons and suspicious AWS IAM activity."
+    },
+    "malicious-domain.com": {
+      "type": "domain",
+      "reputation": "malicious",
+      "confidence": 88,
+      "source": "Local Threat Intel Feed",
+      "tags": ["c2", "phishing"],
+      "first_seen": "2026-04-27",
+      "last_seen": "2026-05-18",
+      "notes": "Demo command-and-control domain indicator."
+    }
+  }
+}
