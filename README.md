@@ -4,26 +4,21 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 ![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
 
-## Overview
+Python-based SOC triage toolkit that analyzes sample security telemetry, detects suspicious behavior, enriches findings with local threat intelligence, assigns risk scores, and generates analyst-ready reports.
 
-This project simulates a lightweight **SOC triage and incident response automation pipeline** using Python.
-
-It analyzes sample security telemetry, detects suspicious behavior, enriches findings with local threat intelligence, assigns risk scores, and generates analyst-ready outputs such as Markdown reports, JSON findings, incident timelines, case files, dashboards, and SOAR-style playbooks.
-
-It demonstrates how security telemetry can be normalized, analyzed, enriched, scored, and converted into analyst-ready response artifacts.
-
-The project is designed to be **offline-first**, so it can be cloned, tested, and demonstrated without cloud credentials, paid APIs, or production logs.
+It works offline using sample Linux, Windows, AWS, IAM, Nmap, IOC, Sigma, and YARA-style inputs.
+> Built to demonstrate security log analysis, incident response workflow design, detection engineering, and Python automation.
 
 ---
 
 ## Core Workflow
 
 1. Parse local security telemetry and exported logs.
-2. Run SOC analyzers across Linux, Windows, AWS, IAM, Nmap, IOC, Sigma, and YARA-style inputs.
+2. Run analyzers across Linux, Windows, AWS, IAM, Nmap, IOC, Sigma, and YARA-style inputs.
 3. Normalize detections into a shared finding model.
 4. Enrich findings with local threat intelligence.
-5. Apply severity and numeric risk scoring.
-6. Generate SOC reports, dashboards, timelines, case files, and playbook recommendations.
+5. Apply severity and risk scoring.
+6. Generate reports, dashboards, timelines, case files, and playbook recommendations.
 
 ---
 
@@ -64,40 +59,20 @@ flowchart LR
 | Windows Events | Failed logons, encoded PowerShell, account creation, privileged group changes |
 | Detection Rules | Sigma-style and YARA-style matches against exported telemetry |
 
+## Live Dashboard
+[Open SOC Dashboard](https://sanyasachdeva1.github.io/python-security-automation-scripts/reports/soc_dashboard.html)
+
 ---
 
 ## Key Features
 
-- Shared `Finding` model with severity, evidence, recommendations, MITRE ATT&CK mapping, and source tracking
-- Prioritized triage output sorted by severity and risk score
+- Shared finding model with severity, evidence, recommendation, MITRE mapping, and source tracking
+- Multi-source SOC triage across Linux, Windows, AWS, IAM, Nmap, IOC, Sigma, and YARA-style data
 - Local threat intelligence enrichment
-- Numeric risk scoring from 0–100
-- Incident timeline generation across Linux, AWS, and Windows telemetry
-- Case-management style report with investigation checklist
-- SOAR-style playbook recommendations
-- HTML dashboard with severity metrics and analyst recommendations
-- JSON and Markdown report output
-- Optional external input collection workflow
-- Pytest validation and GitHub Actions CI
-
----
-
-## What Makes This Different
-
-Unlike single-purpose SOC scripts, this project connects multiple parts of the incident response workflow:
-
-- Multi-source triage across Linux auth logs, AWS CloudTrail, Windows events, IAM policies, Nmap XML, IOCs, Sigma-style rules, and YARA-style rules
-- Offline-first design with realistic sample data, so the project can be reviewed without cloud credentials or paid APIs
-- Shared structured `Finding` model across analyzers for consistent evidence, severity, MITRE mapping, recommendations, enrichment, and risk scoring
-- Analyst-ready outputs including a dashboard, Markdown report, JSON report, incident timeline, case file, and SOAR playbooks
-- Future-ready collector layer for external SIEM, EDR, cloud, and threat-intel sources
-- Portfolio-friendly balance: broad enough to show SOC/IR thinking, but not overloaded into a full SIEM platform
-
-## Live Dashboard
-
-View the published SOC dashboard:
-
-[Open SOC Dashboard](https://sanyasachdeva1.github.io/python-security-automation-scripts/reports/soc_dashboard.html)
+- Risk scoring from 0–100
+- Markdown, JSON, HTML dashboard, timeline, case file, and SOAR-style playbook outputs
+- Offline-first sample data for easy review
+- pytest validation and GitHub Actions CI
 
 ---
 
@@ -237,17 +212,13 @@ The workflow validates:
 ---
 
 ## Production Extension Path
-
-In a production SOC, this project could be extended with collectors for:
-
+This project could be extended with collectors for:
 - SIEM exports from Splunk, Sentinel, Elastic, or QRadar
 - EDR exports from Defender, CrowdStrike, SentinelOne, or osquery
-- AWS CloudTrail from S3, CloudWatch Logs, or the AWS API
-- Threat intelligence APIs such as VirusTotal, AbuseIPDB, GreyNoise, AlienVault OTX, or MISP
-- Ticketing and case systems such as Jira, ServiceNow, TheHive, or GitHub Issues
-
-The recommended design pattern is to keep analyzers file-based and deterministic, while collectors handle external APIs and normalize data into `collected-data/`.
-
+- AWS CloudTrail from S3, CloudWatch Logs, or AWS APIs
+- Threat intelligence APIs such as VirusTotal, AbuseIPDB, GreyNoise, OTX, or MISP
+- Ticketing systems such as Jira, ServiceNow, TheHive, or GitHub Issues
+  
 ---
 
 ## Resume Relevance
@@ -263,6 +234,19 @@ This project demonstrates hands-on experience in:
 - Report generation
 - Python-based security tooling
 - GitHub Actions CI
+
+---
+
+## What Makes This Different
+
+Unlike single-purpose SOC scripts, this project connects multiple parts of the incident response workflow:
+
+- Multi-source triage across Linux auth logs, AWS CloudTrail, Windows events, IAM policies, Nmap XML, IOCs, Sigma-style rules, and YARA-style rules
+- Offline-first design with realistic sample data, so the project can be reviewed without cloud credentials or paid APIs
+- Shared structured `Finding` model across analyzers for consistent evidence, severity, MITRE mapping, recommendations, enrichment, and risk scoring
+- Analyst-ready outputs including a dashboard, Markdown report, JSON report, incident timeline, case file, and SOAR playbooks
+- Future-ready collector layer for external SIEM, EDR, cloud, and threat-intel sources
+- Portfolio-friendly balance: broad enough to show SOC/IR thinking, but not overloaded into a full SIEM platform
 
 ---
 
