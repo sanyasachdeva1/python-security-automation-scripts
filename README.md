@@ -10,6 +10,8 @@ This project simulates a lightweight **SOC triage and incident response automati
 
 It analyzes sample security telemetry, detects suspicious behavior, enriches findings with local threat intelligence, assigns risk scores, and generates analyst-ready outputs such as Markdown reports, JSON findings, incident timelines, case files, dashboards, and SOAR-style playbooks.
 
+It demonstrates how security telemetry can be normalized, analyzed, enriched, scored, and converted into analyst-ready response artifacts.
+
 The project is designed to be **offline-first**, so it can be cloned, tested, and demonstrated without cloud credentials, paid APIs, or production logs.
 
 ---
@@ -79,6 +81,17 @@ flowchart LR
 - Pytest validation and GitHub Actions CI
 
 ---
+
+## What Makes This Different
+
+Unlike single-purpose SOC scripts, this project connects multiple parts of the incident response workflow:
+
+- Multi-source triage across Linux auth logs, AWS CloudTrail, Windows events, IAM policies, Nmap XML, IOCs, Sigma-style rules, and YARA-style rules
+- Offline-first design with realistic sample data, so the project can be reviewed without cloud credentials or paid APIs
+- Shared structured `Finding` model across analyzers for consistent evidence, severity, MITRE mapping, recommendations, enrichment, and risk scoring
+- Analyst-ready outputs including a dashboard, Markdown report, JSON report, incident timeline, case file, and SOAR playbooks
+- Future-ready collector layer for external SIEM, EDR, cloud, and threat-intel sources
+- Portfolio-friendly balance: broad enough to show SOC/IR thinking, but not overloaded into a full SIEM platform
 
 ## Live Dashboard
 
